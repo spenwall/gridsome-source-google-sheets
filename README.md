@@ -14,7 +14,7 @@ npm install gridsome-source-google-sheets
 
 ## How to use
 
-You will need to generate a google api key here. The sheetId can be found on the sheets url.
+You will need to generate a google api key [here](https://console.developers.google.com/apis/credentials). The sheetId can be found on the sheets url. You will also need to make your spreadsheet viewable to the public to use the api credentials.
 ```js
 module.exports = {
   siteName: 'Gridsome',
@@ -30,7 +30,7 @@ module.exports = {
 }
 ```
 
-In your pages
+## Example Query
 
 ```js
 <page-query>
