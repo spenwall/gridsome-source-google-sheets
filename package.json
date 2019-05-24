@@ -1,19 +1,30 @@
 {
   "name": "gridsome-source-google-sheets",
+  "author": {
+    "name": "Spencer Wallace",
+    "email": "spencer.wallace@outlook.com"
+  },
   "version": "0.1.0",
   "description": "Gridsome source plugin for google sheets",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/spenwall/gridsome-source-google-sheets.git"
+  },
+  "bugs": {
+    "url": "https://github.com/spenwall/gridsome-source-google-sheets/issues"
+  },
+  "homepage": "https://github.com/spenwall/gridsome-source-google-sheets.git",
+  "license": "MIT",
   "keywords": [
     "gridsome",
     "gridsome-plugin",
     "gridsome-source",
     "google-sheets"
   ],
-  "author": "Spencer Wallace",
-  "license": "ISC",
   "dependencies": {
     "googleapis": "^40.0.0"
   },
