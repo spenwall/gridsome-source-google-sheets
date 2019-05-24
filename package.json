@@ -1,6 +1,6 @@
 {
   "name": "gridsome-source-google-sheets",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Gridsome source plugin for google sheets",
   "main": "index.js",
   "scripts": {
