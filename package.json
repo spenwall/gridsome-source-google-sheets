@@ -1,0 +1,23 @@
+{
+  "name": "gridsome-source-google-sheets",
+  "version": "0.0.1",
+  "description": "Gridsome source plugin for google sheets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gridsome",
+    "gridsome-plugin",
+    "gridsome-source",
+    "google-sheets"
+  ],
+  "author": "Spencer Wallace",
+  "license": "ISC",
+  "dependencies": {
+    "googleapis": "^40.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.17.1"
+  }
+}
