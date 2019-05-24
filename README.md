@@ -29,3 +29,21 @@ module.exports = {
   ]
 }
 ```
+
+In your pages
+
+```js
+<page-query>
+  query MyData {
+    allGoogleSheet(sortBy: "id", order: ASC) {
+      edges {
+        node {
+          id
+          Col1
+          Col2
+        }
+      }
+    }
+  }
+</page-query>
+```
