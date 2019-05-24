@@ -35,7 +35,6 @@ class GoogleSheetSource {
             )
           })
           nodes.map((value, key, title) => {
-            value.id = key + 1
             contentType.addNode(value)
           })
         })

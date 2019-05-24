@@ -35,10 +35,9 @@ module.exports = {
 ```js
 <page-query>
   query MyData {
-    allGoogleSheet(sortBy: "id", order: ASC) {
+    allGoogleSheets {
       edges {
         node {
-          id
           Col1
           Col2
         }
