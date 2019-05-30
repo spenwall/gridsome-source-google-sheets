@@ -22,23 +22,23 @@ module.exports = {
     {
       use: 'gridsome-source-google-sheets',
       options: {
-        sheetId: "",
-        apiKey: "",
+        sheetId: 'GOOGLE_SHEET_ID', 
+        apiKey: 'GOOGLE_API_KEY',
+        route: 'OPTIONAL_ROUTE', //Omit if not using routes
       }
     }
   ]
 }
 ```
 
-## Example Query
+### Example query on page template
 
 ```js
 <page-query>
   query MyData {
-    allGoogleSheet(sortBy: "id", order: ASC) {
+    allGoogleSheets {
       edges {
         node {
-          id
           Col1
           Col2
         }
@@ -47,3 +47,34 @@ module.exports = {
   }
 </page-query>
 ```
+
+### To use data in page
+
+```js
+<template>
+  <div>
+    {{ $page.allGoogleSheet.col1 }}
+  </div>
+  <div>
+    {{ $page.allGoogleSheet.col2 }}
+  </div>
+</template>
+```
+
+### Example query in GoogleSheet.vue template
+
+```js
+<page-query>
+query Post ($path: String!) {
+  googleSheet (path: $path) {
+    col1
+    col2
+  }
+}
+</page-query>
+```
+
+## Limitations
+
+* Max columns 52
+* Max rows 10000
