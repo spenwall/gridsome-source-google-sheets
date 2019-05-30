@@ -31,7 +31,7 @@ module.exports = {
 }
 ```
 
-## Example query on pages
+### Example query on page template
 
 ```js
 <page-query>
@@ -48,7 +48,20 @@ module.exports = {
 </page-query>
 ```
 
-## Example query in GoogleSheet template
+### To use data in page
+
+```js
+<template>
+  <div>
+    {{ $page.allGoogleSheet.col1 }}
+  </div>
+  <div>
+    {{ $page.allGoogleSheet.col2 }}
+  </div>
+</template>
+```
+
+### Example query in GoogleSheet.vue template
 
 ```js
 <page-query>
@@ -60,3 +73,8 @@ query Post ($path: String!) {
 }
 </page-query>
 ```
+
+## Limitations
+
+* Max columns 52
+* Max rows 10000
