@@ -22,15 +22,16 @@ module.exports = {
     {
       use: 'gridsome-source-google-sheets',
       options: {
-        sheetId: "",
-        apiKey: "",
+        sheetId: 'GOOGLE_SHEET_ID', 
+        apiKey: 'GOOGLE_API_KEY',
+        route: 'OPTIONAL_ROUTE', //Omit if not using routes
       }
     }
   ]
 }
 ```
 
-## Example Query
+## Example query on pages
 
 ```js
 <page-query>
@@ -44,5 +45,18 @@ module.exports = {
       }
     }
   }
+</page-query>
+```
+
+## Example query in GoogleSheet template
+
+```js
+<page-query>
+query Post ($path: String!) {
+  googleSheet (path: $path) {
+    col1
+    col2
+  }
+}
 </page-query>
 ```
