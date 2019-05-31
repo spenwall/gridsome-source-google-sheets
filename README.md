@@ -1,5 +1,7 @@
 # Gridsome Source for Google Sheets
 
+![npm](https://img.shields.io/npm/dt/gridsome-source-google-sheets.svg)
+
 Source plugin for fetching data from Google Sheets. 
 
 ## Install 
