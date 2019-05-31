@@ -36,7 +36,7 @@ module.exports = {
 ```js
 <page-query>
   query MyData {
-    allGoogleSheets {
+    allGoogleSheet {
       edges {
         node {
           Col1
