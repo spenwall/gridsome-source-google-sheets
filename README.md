@@ -24,8 +24,8 @@ module.exports = {
       options: {
         sheetId: 'GOOGLE_SHEET_ID', 
         apiKey: 'GOOGLE_API_KEY',
-        route: 'OPTIONAL_ROUTE', //Omit if not using routes
-      }
+        route: 'OPTIONAL_ROUTE', //Optional - omit if not using routes
+        type: 'TYPE_NAME', //Optional - default is googleSheet. Used for graphql queries.
     }
   ]
 }
@@ -61,7 +61,7 @@ module.exports = {
 </template>
 ```
 
-### Example query in GoogleSheet.vue template
+### Example query in GoogleSheet.vue in src/templates
 
 ```js
 <page-query>

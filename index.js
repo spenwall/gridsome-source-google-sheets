@@ -5,7 +5,8 @@ class GoogleSheetSource {
     return {
       sheetId: '',
       apiKey: '',
-      route: ''
+      route: '',
+      type: 'googleSheet',
     }
   }
 
@@ -15,7 +16,7 @@ class GoogleSheetSource {
 
     api.loadSource(async store => {
       const contentType = store.addContentType({
-        typeName: 'GoogleSheet',
+        typeName: this.options.type,
         route: this.options.route,
       })
 
