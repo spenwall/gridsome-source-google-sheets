@@ -2,6 +2,10 @@
 
 ![npm](https://img.shields.io/npm/dt/gridsome-source-google-sheets.svg)
 
+![NPM](https://img.shields.io/npm/l/gridsome-source-google-sheets.svg)
+
+![npm](https://img.shields.io/npm/v/gridsome-source-google-sheets.svg)
+
 Source plugin for fetching data from Google Sheets. 
 
 ## Install 
