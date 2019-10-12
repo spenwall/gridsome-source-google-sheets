@@ -17,10 +17,11 @@ class GoogleSheetSource {
     let type = Object.assign({}, 
       this.options.route === null ? null : {route: this.options.route}
     )
-    type.typeName = this.options.type
-
-    api.loadSource(async store => {
-      const contentType = store.addContentType(type)
+    
+    api.loadSource(async store => {
+      const contentType = store.addCollection({
+        typeName: this.options.type,
+      })
 
       const sheets = google.sheets({
         version: 'v4',
