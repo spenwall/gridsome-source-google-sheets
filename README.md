@@ -28,7 +28,9 @@ module.exports = {
       options: {
         sheetId: 'GOOGLE_SHEET_ID', 
         apiKey: 'GOOGLE_API_KEY',
+        route: 'OPTIONAL_ROUTE', //Optional - omit if not using routes
         type: 'TYPE_NAME', //Optional - default is googleSheet. Used for graphql queries.
+      }
     }
   ]
 }
