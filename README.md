@@ -66,7 +66,7 @@ module.exports = {
 </template>
 ```
 
-### Example query in GoogleSheet.vue in src/templates
+### Example query in googleSheet.vue in src/templates
 
 ```js
 <page-query>
