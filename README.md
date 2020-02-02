@@ -6,6 +6,10 @@
 
 Source plugin for fetching data from Google Sheets. 
 
+## Requirements
+
+Gridsome: >0.7.0
+
 ## Install 
 
 ```js
@@ -18,7 +22,9 @@ npm install gridsome-source-google-sheets
 
 ## How to use
 
-You will need to generate a google api key [here](https://console.developers.google.com/apis/credentials). The sheetId can be found on the sheets url. You will also need to make your spreadsheet viewable to the public to use the api credentials.
+You will need to generate a google api key [here](https://console.developers.google.com/apis/credentials). The sheetId 
+can be found on the sheets url. It is the large hash number near the end. You will also need to make your spreadsheet viewable to the public to use the api credentials.
+
 ```js
 module.exports = {
   siteName: 'Gridsome',
@@ -28,8 +34,7 @@ module.exports = {
       options: {
         sheetId: 'GOOGLE_SHEET_ID', 
         apiKey: 'GOOGLE_API_KEY',
-        route: 'OPTIONAL_ROUTE', //Optional - omit if not using routes
-        type: 'TYPE_NAME', //Optional - default is googleSheet. Used for graphql queries.
+        // type: 'TYPE_NAME', //Optional - default is googleSheet. Used for graphql queries.
       }
     }
   ]
@@ -44,8 +49,8 @@ module.exports = {
     allGoogleSheet {
       edges {
         node {
-          Col1
-          Col2
+          id
+          title
         }
       }
     }
@@ -58,22 +63,58 @@ module.exports = {
 ```js
 <template>
   <div>
-    {{ $page.allGoogleSheet.node.col1 }}
+    {{ $page.allGoogleSheet.node.id }}
   </div>
   <div>
-    {{ $page.allGoogleSheet.node.col2 }}
+    {{ $page.allGoogleSheet.node.title }}
   </div>
 </template>
 ```
 
-### Example query in googleSheet.vue in src/templates
+### Using Templates
+
+To use this in a template first setup the template route in gridsome.config.js
 
 ```js
+module.exports = {
+  siteName: 'Gridsome',
+  plugins: [
+    {
+      use: 'gridsome-source-google-sheets',
+      options: {
+        sheetId: 'GOOGLE_SHEET_ID', 
+        apiKey: 'GOOGLE_API_KEY',
+        // type: 'TYPE_NAME', //Optional - default is googleSheet. Used for graphql queries.
+      }
+    }
+  ],
+  templates: {
+    googleSheet: [
+      {
+        path: '/:id',
+        component: './src/templates/googleSheet.vue'
+      }
+    ]
+  }
+}
+
+```
+
+### Example template in src/template/googleSheet.vue
+
+```js
+<template>
+  <layout>
+    <div>{{$page.googleSheet.title}}</div>
+    <div>{{$page.googleSheet.body}}</div>
+  </layout>
+</template>
+
 <page-query>
 query Post ($path: String!) {
   googleSheet (path: $path) {
-    col1
-    col2
+    title
+    body
   }
 }
 </page-query>

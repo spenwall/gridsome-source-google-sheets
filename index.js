@@ -10,12 +10,11 @@ class GoogleSheetSource {
   }
 
   constructor(api, options = GoogleSheetSource.defaultOptions()) {
-    // console.log(options.credentials)
     this.options = options
 
     api.loadSource(async store => {
       const contentType = store.addCollection({
-        typeName = this.options.type
+        typeName: this.options.type
       })
 
       const sheets = google.sheets({
