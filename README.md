@@ -58,10 +58,10 @@ module.exports = {
 ```js
 <template>
   <div>
-    {{ $page.allGoogleSheet.col1 }}
+    {{ $page.allGoogleSheet.node.col1 }}
   </div>
   <div>
-    {{ $page.allGoogleSheet.col2 }}
+    {{ $page.allGoogleSheet.node.col2 }}
   </div>
 </template>
 ```
